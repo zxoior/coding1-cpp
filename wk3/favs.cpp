@@ -67,7 +67,7 @@ int main() {
         }   // end of edit
         else {
             cout << "I dont recognize that input.\n";
-        }
+        }   // end of else
 
 
     }
