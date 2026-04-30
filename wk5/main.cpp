@@ -70,7 +70,7 @@ public:
         boredom -= 1;
     }
 
-    // setter
+    // setters
     void setName(string givenName) {
         if(givenName.size() <= 5) {
             name = givenName;
@@ -80,16 +80,20 @@ public:
         }
     }
 
-    void setCharge(in givenCharge) {
+    void setCharge(int givenCharge) {
         if(givenCharge < 0) {
-            Charge = 0;
+            givenCharge = 0;
         }
         else if(givenCharge > 100) {
-            Charge = 100;
+            givenCharge = 100;
         }
         else {
             charge = givenCharge;
         }
+    }
+
+    void changeCharge(int amount) {
+        setCharge(charge += amount);
     }
 
     string getName() {
@@ -114,20 +118,20 @@ int main() {
 
     robot threepio;
     threepio.setName("C-3P0");                          // using the setter now
-    threepio.setcharge(2);
+    threepio.setCharge(2);
 
     cout << "Heres artoo: " << artoo.getName() << ".\n";
 
-    cout << artoo.name << " Notices that " << threepio.name;
+    cout << artoo.getName() << " Notices that " << threepio.getName();
     cout << " doesnt have much battery left. Lets fix that.\n";
 
-    while(threepio.charge < 15) {
-        artoo.charge -= 1;
-        threepio.charge += 1;
+    while(threepio.getCharge() < 15) {
+        artoo.changeCharge(-1);
+        threepio.changeCharge(1);
     }
 
-    cout << "threepio's charge is now " << threepio.charge << ".\n";
-    cout << "artoo's charge is now " << artoo.charge << ".\n"; 
+    cout << "threepio's charge is now " << threepio.getCharge() << ".\n";
+    cout << "artoo's charge is now " << artoo.getCharge() << ".\n"; 
 
     // using member functions
     artoo.status();
@@ -142,7 +146,7 @@ int main() {
             getline(cin, input);
 
             if (input == "play") {
-                cout << "Lets play with" << artoo.name << "!\n";
+                cout << "Lets play with" << artoo.getName() << "!\n";
                 artoo.play();
             }
 
