@@ -48,7 +48,7 @@ public:
         }
     }
 
-    // step 1 =  who attacks first
+    // step 1 = who attacks first
     // step 2 = fighter A attacks fighter B
     // step 3 = (if fighter B is still alive) fighter B attacks fighter A
 
