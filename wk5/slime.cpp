@@ -26,8 +26,9 @@ public:
     baseSlime() {
         // get a random name between 0 and
         name = slimeNames[rand() % slimeNames.size()] + " Slime";
-        health = rand() % 5 + 5;
-        damage = rand() % 6 + 3;
+        health = rand() % 5 + 5;            // 5-9
+        damage = rand() % 6 + 3;            // 3-8
+        // rand() % (max-min) + min
     }
 
     void hello() {
