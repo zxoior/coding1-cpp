@@ -1,6 +1,7 @@
 // final.cpp
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
@@ -22,7 +23,6 @@ public:
         hunger = givenHunger;
         damage = givenDamage;
         health = givenHealth;
-        // statusCheck();
     }
 
     // overload the constructor
@@ -34,6 +34,9 @@ public:
         statusCheck();
     }
 
+
+
+    // functions
     void heal() {
         health += rand() % 6 + 1;
     } // end of heal
@@ -73,6 +76,8 @@ public:
         cout << ".\n";
     } // end of status check
 
+
+
     // setters
     void setName(string givenName) {
         if(givenName.size() <= 5) {
@@ -98,6 +103,7 @@ public:
     void changeHunger(int amount) {
         setHunger(hunger += amount);
     } // changing hunger
+    
 
 
     // fighting  
@@ -114,6 +120,8 @@ public:
         }
     }
     
+
+
     // Getters
     string getName() {
         return name;
@@ -144,10 +152,12 @@ int main() {
 
     while(true) {
         cout << "\nWhat do you want to do?\n";
-        cout << "You can 'feed', 'train', 'battle', 'status', and 'quit'.\n";
+        cout << "You can FEED, TRAIN, STATUS, BATTLE, and QUIT.....\n";
         
         getline(cin, input);
-
+        
+        
+        // end run
         if(input =="quit") {
             cout << "Thanks for playing.\n\n";
             break;
@@ -166,6 +176,7 @@ int main() {
             robert.statusCheck();
         } // end of status
 
+        // fight a loser
         else if(input == "battle") {
             cout << "TIME TO FUCK SHIT UP!!!\n";
             monster carter("Carter Hogan", 1, 1, 15);
@@ -211,6 +222,7 @@ int main() {
                         }
                         
                     }
+                    robert.tired();
                 }
                 else if(input == "heal") {
                     cout << "Mending your wounds ";
@@ -221,7 +233,7 @@ int main() {
                 }
 
             }
-        } // edn of battle
+        } // end of battle
         
         // feed the monster
         else if(input == "feed") {
@@ -232,4 +244,11 @@ int main() {
             cout << "I didnt understand that command.\n";
         }
     }
-}
+} // end of main
+
+
+// Thank you Professor Foster for the fun but hard semester.
+// I tried really hard to do the file stuff but every time
+// I put something in it broke my code in a way I or even google didnt know how to fix.
+
+// Ill just take the loss of points. Have a good summer.

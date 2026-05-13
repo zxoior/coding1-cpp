@@ -69,18 +69,10 @@ int main() {
 
     writeFile("Here is some text\nHere is another line of text\n");
 
-    // string line;                                // create a varable to hold each line of text
-    // ifstream readFile("save.txt");              // open save.txt file
-    // if(readFile.is_open()){                     // if the file could be opened...
-        // while(getline(readFile, line)) {        // as long as there are lines
-            // cout << line << endl;               // display the line.
-       // }
-    // }
-
-    readFile();
+    readFile("save.txt");
 
     // create vector
-    vector<string> names = {"Harry", "Hernione", "Ron"};
+    vector<string> names = {"names.txt"};
     // "load" the names from the file (with readFile())
     readFile(names, "names.txt");
     // displaying the names in the vector
@@ -92,10 +84,6 @@ int main() {
     // add more names to the vector
     // "save" the vector to the file
     writeFile(names, "names.txt");                  // creates a new file with names
-    
-
-
-
 
     return 0;
 }
